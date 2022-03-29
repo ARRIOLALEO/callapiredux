@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { callToApi } from "./callToApiSlice";
+import { callToApi, actions } from "./callToApiSlice";
 function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(callToApi());
   }, []);
+  console.log(actions);
   const data = useSelector((state) => state);
   const hanlderHalf = () => {
-    dispatch({ type: "recipies/removeHalf" });
+    dispatch(actions.removeHalf());
     console.log(data);
   };
   return (

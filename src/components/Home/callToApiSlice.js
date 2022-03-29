@@ -27,4 +27,5 @@ const recipiesSlice = createSlice({
   },
 });
 
+export const actions = recipiesSlice.actions;
 export default recipiesSlice;
